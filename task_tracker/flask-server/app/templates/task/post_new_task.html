@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post new task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Task Tracker</h1>
+        <div class="d-flex align-items-end flex-column m-3">
+            <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+            <a href="/user/dashboard"  style="text-decoration: none;">Dashboard</a>
+            <a href="/user/logout" class="ms-3"  style="text-decoration: none;">logout</a>
+        </div>
+        
+        <div>
+            <h2>Post new task</h2>
+            <form action="/task/add" method="POST">
+                <div>
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div>
+                    <label for="status" class="form-label">Status:</label>
+                    <input type="text" name="status" class="form-control">
+                </div>
+                <div>
+                    <label for="due_date" class="form-label">Due Date:</label>
+                    <input type="date" name="due_date" class="form-control">
+                </div>
+                <div>
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+                <div>
+                    <label for="priority" class="form-label">Priority:</label>
+                    <select name="priority" id="priority" class="form-control">
+                        <option value="">select</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="normal">Normal</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <input type="submit" value="post" class="btn btn-light">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
